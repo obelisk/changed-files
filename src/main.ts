@@ -14,7 +14,9 @@ class ChangedFiles {
     readonly created: string[] = []
     readonly deleted: string[] = []
 
-    constructor(private readonly pattern: RegExp) {}
+    constructor(private readonly pattern: RegExp) {
+        console.log("Test that we see this")
+    }
 
     apply(f: File): void {
         if (!this.pattern.test(f.filename)) {
